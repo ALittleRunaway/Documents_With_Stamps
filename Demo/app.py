@@ -1,7 +1,7 @@
 """REST-API server"""
 from flask import Flask, request, send_file
-from Demo.push_pull_file import PushPullFile
-# from push_pull_file import PushPullFile
+# from Demo.push_pull_file import PushPullFile
+from push_pull_file import PushPullFile
 
 
 app = Flask(__name__)

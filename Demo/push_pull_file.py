@@ -1,8 +1,8 @@
 """Pushing and pulling pdf files"""
 import requests
 from datetime import datetime
-from Demo.stamp_to_pdf import StampToPdf
-# from stamp_to_pdf import StampToPdf
+# from Demo.stamp_to_pdf import StampToPdf
+from stamp_to_pdf import StampToPdf
 
 class PushPullFile():
     """Class for pushing and pulling pdf files"""
