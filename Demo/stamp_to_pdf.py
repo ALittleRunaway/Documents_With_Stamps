@@ -31,7 +31,7 @@ class StampToPdf():
         y_by = int(page_height / 25)
         x_by = int(page_width - (watermark_width * scale_by)) - y_by
 
-        # Watermark all the pages
+        # Watermark all of the pages
         for page in range(pdf_reader.getNumPages()):
             page = pdf_reader.getPage(page)
             page.mergeRotatedScaledTranslatedPage(watermark_page, 0, scale_by, x_by, y_by, expand=False)

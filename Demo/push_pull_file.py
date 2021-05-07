@@ -21,7 +21,7 @@ class PushPullFile():
         StampToPdf.stamp_to_pdf(
             input_pdf=f'input_files/InputPdf_{timestamp}.pdf',
             output=f'output_files/OutputPdf_{timestamp}.pdf',
-            watermark='stamps/stamp_1.pdf')
+            watermark='stamps/stamp_2.pdf')
         # StampToPdf.stamp_to_pdf(
         #     input_pdf=f'sertificates/test_pdf_2.pdf',
         #     output=f'output_files/OutputPdf_2.pdf',
