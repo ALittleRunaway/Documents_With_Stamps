@@ -1,5 +1,5 @@
 """REST-API server"""
-from flask import Flask, request, send_file
+from flask import Flask, request, send_file, render_template
 # from Demo.push_pull_file import PushPullFile
 from push_pull_file import PushPullFile
 from answers import AnswerDictionaries
@@ -15,7 +15,7 @@ app.config['JSON_SORT_KEYS'] = False # To save the right order in the dictionari
 @app.route("/home", methods=['GET'])
 def index():
     """Shows the empty main page"""
-    return "fdgf"
+    return render_template("index.html")
 
 
 @app.route("/stamp", methods=['GET'])
