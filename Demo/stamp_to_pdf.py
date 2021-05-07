@@ -17,12 +17,17 @@ class StampToPdf():
         # measurements
         watermark_height = float(watermark_page.mediaBox[3])
         watermark_width = float(watermark_page.mediaBox[2])
+        # print(watermark_height, watermark_width)
         page_height = float(pdf_reader.getPage(0).mediaBox[3])
         page_width = float(pdf_reader.getPage(0).mediaBox[2])
-        # find he position for the watermark in the page
-        required_difference = 6
-        required_watermark_height = page_height / required_difference
+        # print(page_height, page_width)
+        # required_difference = 6
+        # required_watermark_height = page_height / required_difference
+        # scale_by = required_watermark_height / watermark_height
+        # resize watermark
+        required_watermark_height = page_height * 0.1782376502
         scale_by = required_watermark_height / watermark_height
+        # find he position for the watermark in the page
         y_by = int(page_height / 25)
         x_by = int(page_width - (watermark_width * scale_by)) - y_by
 

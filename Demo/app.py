@@ -12,11 +12,11 @@ app = Flask(__name__)
 @app.route("/home", methods=['GET'])
 def index():
     """Shows the empty main page"""
-    return ""
+    return "fdgf"
 
 
 @app.route("/stamp", methods=['GET'])
-def query():
+def stamp():
     """Processes 'stamp' method"""
     take_path = request.args.get('take_path')
     put_path = request.args.get('put_path')
@@ -26,7 +26,10 @@ def query():
                  }
     # returns the json dictionary
     path = PushPullFile.pull_file(arguments)
-    return send_file(path, as_attachment=True)
+    # return f"{[path]}"
+    # Для открытия окна загрузки раскомментировапть строчку ниже
+    # return send_file(path, as_attachment=True)
+    return "Your file is saved!"
 
 
 if __name__ == "__main__":

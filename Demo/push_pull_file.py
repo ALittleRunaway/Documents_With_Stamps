@@ -12,7 +12,8 @@ class PushPullFile():
         """for pulling pdf files"""
         res = requests.get(arguments['take_path'])
         now = datetime.now()
-        timestamp = datetime.timestamp(now)
+        # timestamp without milliseconds
+        timestamp = int(datetime.timestamp(now))
         with open(f"input_files/InputPdf_{timestamp}.pdf", "wb") as f:
             f.write(res.content)
         # command = f"curl {arguments['take_path']} -o InputPdf.pdf"
@@ -20,11 +21,11 @@ class PushPullFile():
         StampToPdf.stamp_to_pdf(
             input_pdf=f'input_files/InputPdf_{timestamp}.pdf',
             output=f'output_files/OutputPdf_{timestamp}.pdf',
-            watermark='stamps/stamp_3.pdf')
+            watermark='stamps/stamp_1.pdf')
         # StampToPdf.stamp_to_pdf(
         #     input_pdf=f'sertificates/test_pdf_2.pdf',
         #     output=f'output_files/OutputPdf_2.pdf',
-        #     watermark='stamps/stamp_2.pdf')
+        #     watermark='stamps/stamp_1.pdf')
         # return f'output_files/OutputPdf_2.pdf'
         return f'output_files/OutputPdf_{timestamp}.pdf'
 
