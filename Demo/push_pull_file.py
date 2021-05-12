@@ -3,6 +3,8 @@ import requests
 from datetime import datetime
 # from Demo.stamp_to_pdf import StampToPdf
 from stamp_to_pdf import StampToPdf
+from pathlib import Path
+
 
 class PushPullFile():
     """Class for pushing and pulling pdf files"""
@@ -14,10 +16,10 @@ class PushPullFile():
         now = datetime.now()
         # timestamp without milliseconds
         timestamp = int(datetime.timestamp(now))
+        Path("input_files").mkdir(parents=True, exist_ok=True)
+        Path("output_files").mkdir(parents=True, exist_ok=True)
         with open(f"input_files/InputPdf_{timestamp}.pdf", "wb") as f:
             f.write(res.content)
-        # command = f"curl {arguments['take_path']} -o InputPdf.pdf"
-        # os.system(f'cmd /k {command}')
         StampToPdf.stamp_to_pdf(
             input_pdf=f'input_files/InputPdf_{timestamp}.pdf',
             output=f'output_files/OutputPdf_{timestamp}.pdf',
