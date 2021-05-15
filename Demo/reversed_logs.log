@@ -1,0 +1,13 @@
+INFO:werkzeug:127.0.0.1 - - [16/May/2021 00:37:45] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/May/2021 00:37:44] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/May/2021 00:37:44] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/May/2021 00:37:43] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/May/2021 00:37:43] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/May/2021 00:37:42] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/May/2021 00:37:42] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/May/2021 00:37:40] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/May/2021 00:37:38] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [16/May/2021 00:37:35] "GET / HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Debugger PIN: 123-254-338
+WARNING:werkzeug: * Debugger is active!
