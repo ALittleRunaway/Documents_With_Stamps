@@ -1,12 +1,11 @@
 """REST-API server"""
-from flask import Flask, request, send_file, render_template
-# from Demo.push_pull_file import PushPullFile
+from flask import Flask, request, send_file, render_template, Response
 from push_pull_file import PushPullFile
 from answers import AnswerDictionaries
 from PyPDF2 import utils
 from requests import exceptions
 import logging
-from logging.handlers import RotatingFileHandler
+import re
 
 
 app = Flask(__name__)
@@ -19,22 +18,24 @@ app.config['JSON_SORT_KEYS'] = False # To save the right order in the dictionari
 def index():
     """Shows the empty main page"""
     errors = request.args.get('errors')
+    # make logs reversed
+    with open("reversed_logs.log", "w") as f:
+        # regex for deleting color ansi symbols
+        ansi_escape = re.compile(r'\x1B(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])')
+        for line in reversed(list(open("logs.log"))):
+            f.write(ansi_escape.sub('', line.rstrip()) + "\n")
+    # take our ready logs and dislay them depending on 'errors' argument
     if errors is None:
-        # make logs reversed
-        with open("reversed_logs.log", "w") as f:
-            for line in reversed(list(open("logs.log"))):
-                color_1 = line.find("[37m") - 1
-                color_2 = line.find("[0m") - 1
-                if color_1 < 0 or color_2 < 0:
-                    pass
-                else:
-                    line = line[:color_1] + line[color_1 + 5:color_2] + line[color_2 + 4:]
-                f.write(line.rstrip() + "\n")
-        # take uor ready logs and dislay them
         with open("reversed_logs.log", "r") as f:
             logs = f.readlines()
         return render_template("index.html", logs=logs)
-    return ":C"
+    else:
+        error_lines = []
+        with open("reversed_logs.log", "r") as f:
+            for line in f:
+                if "ERROR" in line:
+                    error_lines.append(line)
+        return render_template("index.html", logs=error_lines)
 
 
 @app.route("/stamp", methods=['GET'])
@@ -51,24 +52,28 @@ def stamp():
         path = PushPullFile.pull_file(arguments)
         # PushPullFile.push_file()
     except utils.PdfReadError as e:
+        app.logger.error(f'{request.host} - - "{request.method} {request.url}" : '
+                         f'{AnswerDictionaries.pypdf2_errors(e)["информация_об_ошибке"]["сообщение_ошибки"]} ')
         return AnswerDictionaries.pypdf2_errors(e)
+
     except FileNotFoundError as e:
+        app.logger.error(f'{request.host} - - "{request.method} {request.url}" : '
+                         f'{AnswerDictionaries.existing_errors(e)["информация_об_ошибке"]["сообщение_ошибки"]} ')
         return AnswerDictionaries.existing_errors(e)
+
     except exceptions.MissingSchema as e:
+        app.logger.error(f'{request.host} - - "{request.method} {request.url}" : '
+                         f'{AnswerDictionaries.existing_errors(e)["информация_об_ошибке"]["сообщение_ошибки"]} ')
         return AnswerDictionaries.existing_errors(e)
+
     else:
         return AnswerDictionaries.no_error_answer()
 
 
 if __name__ == "__main__":
-    logging.basicConfig(filename='logs.log', level=logging.DEBUG, filemode="w")
-    # root_logger = logging.getLogger()
-    # root_logger.setLevel(logging.DEBUG)  # or whatever
-    # handler = logging.FileHandler('logs.log', 'w', 'utf-8')  # or whatever
-    # root_logger.addHandler(handler)
-
+    logging.basicConfig(filename='logs.log', level=logging.DEBUG, filemode="w",
+                        format='%(asctime)s %(levelname)s : %(message)s')
     app.run(host='127.0.0.1', debug=True)
-
 
 
 
