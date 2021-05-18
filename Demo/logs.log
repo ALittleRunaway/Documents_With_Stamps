@@ -1,30 +1,10 @@
-2021-05-17 15:27:51,388 WARNING :  * Debugger is active!
-2021-05-17 15:27:51,403 INFO :  * Debugger PIN: 214-572-459
-2021-05-17 15:27:51,420 INFO :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2021-05-17 15:27:52,416 INFO : 127.0.0.1 - - [17/May/2021 15:27:52] "[37mGET / HTTP/1.1[0m" 200 -
-2021-05-17 15:27:55,948 ERROR : 127.0.0.1:5000 - - "GET http://127.0.0.1:5000/stamp" : Ошибка в запросе. Попробуйте изменить url 
-2021-05-17 15:27:55,949 INFO : 127.0.0.1 - - [17/May/2021 15:27:55] "[37mGET /stamp HTTP/1.1[0m" 200 -
-2021-05-17 15:27:58,158 INFO : 127.0.0.1 - - [17/May/2021 15:27:58] "[33mGET /sdsfsdf HTTP/1.1[0m" 404 -
-2021-05-17 15:28:00,243 INFO : 127.0.0.1 - - [17/May/2021 15:28:00] "[37mGET / HTTP/1.1[0m" 200 -
-2021-05-17 15:28:13,655 INFO : 127.0.0.1 - - [17/May/2021 15:28:13] "[37mGET /?errors= HTTP/1.1[0m" 200 -
-2021-05-17 15:28:22,144 ERROR : 127.0.0.1:5000 - - "GET http://127.0.0.1:5000/stamp" : Ошибка в запросе. Попробуйте изменить url 
-2021-05-17 15:28:22,144 INFO : 127.0.0.1 - - [17/May/2021 15:28:22] "[37mGET /stamp HTTP/1.1[0m" 200 -
-2021-05-17 15:28:24,495 ERROR : 127.0.0.1:5000 - - "GET http://127.0.0.1:5000/stamp" : Ошибка в запросе. Попробуйте изменить url 
-2021-05-17 15:28:24,495 INFO : 127.0.0.1 - - [17/May/2021 15:28:24] "[37mGET /stamp HTTP/1.1[0m" 200 -
-2021-05-17 15:28:25,683 ERROR : 127.0.0.1:5000 - - "GET http://127.0.0.1:5000/stamp" : Ошибка в запросе. Попробуйте изменить url 
-2021-05-17 15:28:25,684 INFO : 127.0.0.1 - - [17/May/2021 15:28:25] "[37mGET /stamp HTTP/1.1[0m" 200 -
-2021-05-17 15:28:26,752 ERROR : 127.0.0.1:5000 - - "GET http://127.0.0.1:5000/stamp" : Ошибка в запросе. Попробуйте изменить url 
-2021-05-17 15:28:26,754 INFO : 127.0.0.1 - - [17/May/2021 15:28:26] "[37mGET /stamp HTTP/1.1[0m" 200 -
-2021-05-17 15:28:32,675 ERROR : 127.0.0.1:5000 - - "GET http://127.0.0.1:5000/stamp?take_path=" : Ошибка в запросе. Попробуйте изменить url 
-2021-05-17 15:28:32,676 INFO : 127.0.0.1 - - [17/May/2021 15:28:32] "[37mGET /stamp?take_path= HTTP/1.1[0m" 200 -
-2021-05-17 15:28:38,047 DEBUG : Starting new HTTPS connection (1): www.camozzi.ru:443
-2021-05-17 15:28:38,552 DEBUG : https://www.camozzi.ru:443 "GET /netcat_files/541/691/Deklaratsiya_na_resivery_Kamotstsi.pdf HTTP/1.1" 200 611424
-2021-05-17 15:28:39,191 INFO : 127.0.0.1 - - [17/May/2021 15:28:39] "[37mGET /stamp?take_path=https://www.camozzi.ru/netcat_files/541/691/Deklaratsiya_na_resivery_Kamotstsi.pdf&put_path=https://www.youtube.com/watch?v=zjVR8exkl2Y&t=192s&ab_channel=Dubstep%26Nightcore HTTP/1.1[0m" 200 -
-2021-05-17 15:28:43,136 DEBUG : Starting new HTTPS connection (1): www.camozzi.ru:443
-2021-05-17 15:28:43,803 DEBUG : https://www.camozzi.ru:443 "GET /netcat_files/541/691/Deklaratsiya_na_resivery_Kamotstsi.pdf HTTP/1.1" 200 611424
-2021-05-17 15:28:44,331 INFO : 127.0.0.1 - - [17/May/2021 15:28:44] "[37mGET /stamp?take_path=https://www.camozzi.ru/netcat_files/541/691/Deklaratsiya_na_resivery_Kamotstsi.pdf&put_path=https://www.youtube.com/watchubstep%26Nightcore HTTP/1.1[0m" 200 -
-2021-05-17 15:28:49,991 DEBUG : Starting new HTTPS connection (1): www.camozzi.ru:443
-2021-05-17 15:28:50,526 DEBUG : https://www.camozzi.ru:443 "GET /netcat_files/541/691/Dek HTTP/1.1" 404 None
-2021-05-17 15:28:50,539 ERROR : 127.0.0.1:5000 - - "GET http://127.0.0.1:5000/stamp?take_path=https:%2F%2Fwww.camozzi.ru%2Fnetcat_files%2F541%2F691%2FDek" : Переданного файла не существует или он в неверном формате 
-2021-05-17 15:28:50,540 INFO : 127.0.0.1 - - [17/May/2021 15:28:50] "[37mGET /stamp?take_path=https://www.camozzi.ru/netcat_files/541/691/Dek HTTP/1.1[0m" 200 -
-2021-05-17 15:28:59,591 INFO : 127.0.0.1 - - [17/May/2021 15:28:59] "[37mGET /?errors HTTP/1.1[0m" 200 -
+2021-05-18 17:06:20,165 WARNING :  * Debugger is active!
+2021-05-18 17:06:20,181 INFO :  * Debugger PIN: 214-572-459
+2021-05-18 17:06:20,197 INFO :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-05-18 17:06:25,102 INFO : 127.0.0.1 - - [18/May/2021 17:06:25] "[37mGET / HTTP/1.1[0m" 200 -
+2021-05-18 17:06:25,415 INFO : 127.0.0.1 - - [18/May/2021 17:06:25] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-05-18 17:06:36,527 ERROR : 127.0.0.1:5000 - - "GET http://127.0.0.1:5000/stamp?take_path=" : Ошибка в запросе. Попробуйте изменить url 
+2021-05-18 17:06:36,528 INFO : 127.0.0.1 - - [18/May/2021 17:06:36] "[37mGET /stamp?take_path= HTTP/1.1[0m" 200 -
+2021-05-18 17:07:05,505 DEBUG : Starting new HTTPS connection (1): www.camozzi.ru:443
+2021-05-18 17:07:05,907 DEBUG : https://www.camozzi.ru:443 "GET /netcat_files/541/691/Deklaratsiya_na_resivery_Kamotstsi.pdf HTTP/1.1" 200 611424
+2021-05-18 17:07:06,584 INFO : 127.0.0.1 - - [18/May/2021 17:07:06] "[37mGET /stamp?take_path=https://www.camozzi.ru/netcat_files/541/691/Deklaratsiya_na_resivery_Kamotstsi.pdf HTTP/1.1[0m" 200 -
