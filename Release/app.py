@@ -1,10 +1,11 @@
 """REST-API server"""
-from flask import Flask, request, send_file, render_template, Response
+from flask import Flask, request, render_template
 from push_pull_file import PushPullFile
 from answers import AnswerDictionaries
 from PyPDF2 import utils
 from requests import exceptions
-import logging, re, os
+from pathlib import Path
+import logging, re, os, shutil
 
 
 app = Flask(__name__)
@@ -78,6 +79,12 @@ def stamp():
 
     else:
         return AnswerDictionaries.no_error_answer()
+
+    finally:
+        # Delete the whole folder 'input_files' to clear any document. Then create this folder again
+        if os.path.exists("input_files"):
+            shutil.rmtree("input_files")
+        Path("input_files").mkdir(parents=True, exist_ok=True)
 
 
 if __name__ == "__main__":
